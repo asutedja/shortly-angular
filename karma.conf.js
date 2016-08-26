@@ -34,10 +34,10 @@ module.exports = function (config) {
     browsers: ['PhantomJS'],
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
     // if true, Karma exits after running the tests.
-    singleRun: true
+    singleRun: false
 
   });
 };
