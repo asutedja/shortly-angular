@@ -10,10 +10,14 @@
 <div id='container' ng-controller="LinksController">
   <div class=link ng-model="data.links" >
   <h2>LINKS YO</h2>
+
+  <input type = 'text' ng-model = 'filterInput'/>
   
-  <div class='info' ng-repeat="link in data.links track by $index">
-    <div class='visits'><span class='count'>0</span>Visits</div>
+  <div class='info' ng-show="checkIfMatches(filterInput,link.title)" ng-repeat="link in data.links track by $index">
+    <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+    <div class='title'>{{link.title}}</div>
     <div class='original'>{{link.url}}</div>
+    <a href='{{link.baseUrl}}/{{link.code}}'>{{link.baseUrl}}/{{link.code}}</a>
   </div>
 </div>
   <!--  <h1>Testing</h1>
@@ -27,4 +31,12 @@
   <!-- Your html here -->
 
 
-
+<script id='link' type='text/x-handlebars-template'>
+  <img src='/redirect_icon.png'/>
+  <div class='info'>
+    <div class='visits'><span class='count'>{{visits}}</span>Visits</div>
+    <div class='title'>{{title}}</div>
+    <div class='original'>{{url}}</div>
+    <a href='{{baseUrl}}/{{code}}'>{{baseUrl}}/{{code}}</a>
+  </div>
+</script>
