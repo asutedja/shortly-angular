@@ -1,7 +1,30 @@
+
+<div class='navigation'>
+<ul>
+  <li><a href='#/links' class='index'>All Links</a></li>
+  <li><a href='#/shorten' class='create'>Shorten</a></li>
+  <li><a href='/logout' class='logout'>Logout</a></li>
+</ul>
+</div>
+
 <div id='container' ng-controller="LinksController">
-  <div class=link ng-model="data">
-    {{ data.links }}
+  <div class=link ng-model="data.links" >
+  <h2>LINKS YO</h2>
+  
+  <div class='info' ng-repeat="link in data.links track by $index">
+    <div class='visits'><span class='count'>0</span>Visits</div>
+    <div class='original'>{{link.url}}</div>
   </div>
+</div>
+  <!--  <h1>Testing</h1>
+    <ul>
+    <li>Hello </li>
+     <li ng-repeat="x in data.links">{{ x }} </li> 
+      <li>{{ data }} </li>
+    </ul>
+
+  </div>-->
   <!-- Your html here -->
 
-</div>
+
+

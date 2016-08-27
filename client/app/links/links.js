@@ -6,11 +6,8 @@ angular.module('shortly.links', [])
 
   var init = function() {
     Links.getAll().then(function(data) {
-      $scope.data['links'] = data;  
+      $scope.data['links'] = data;  //[{url:'testing'},{url: 'test'}];
     });
-    
-
   };
-
   init();
 });
