@@ -16,6 +16,15 @@ angular.module('shortly.links', [])
   init();
 
   $scope.checkIfMatches = function(filterInput, title) {
+    if (!filterInput) {
+      return true;
+    }
+    var ind = title.indexOf(filterInput);
+    if (ind === -1) {
+      return false;
+    } else {
+      return true;
+    }
   };
 
 
