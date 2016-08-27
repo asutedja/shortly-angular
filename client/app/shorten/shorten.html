@@ -12,8 +12,9 @@
 <div id='container'>
 <!-- Your code here -->
   <h2>Shorten</h2>
-  <form>
-    <input class='text' type='text' name='url'>
-    <input type='submit' value='Shorten'>
+  <form >
+    <input ng-model = 'inputLink' class='text' type='text' name='url' ng-change="error(inputLink)" >
+    <button type='submit' value='Shorten' ng-click='createShortLink(inputLink)'></button>
 </form>
+  <h1>{{ message }}</h1>
 </div>

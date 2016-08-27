@@ -6,6 +6,7 @@ angular.module('shortly.links', [])
 
   var init = function() {
     Links.getAll().then(function(data) {
+      console.log('getting data', data);
       $scope.data['links'] = data;  //[{url:'testing'},{url: 'test'}];
     });
   };
